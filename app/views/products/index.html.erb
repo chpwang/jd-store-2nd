@@ -1,1 +1,22 @@
-<h1>Hello</h1>
+<div class="row">
+
+  <% @products.each do |product| %>
+
+    <div class="col-sm-4 col-md-3 col-lg-2">
+      <div class="thumbnail">
+        <% if product.image.present? %>
+          <%= image_tag(product.image.medium.url, class: "card-img-top img-rounded", alt: product.title) %>
+        <% else %>
+          <%= image_tag("/index_image_placeholer.png", class: "card-img-top img-rounded", alt: product.title) %>
+        <% end %>
+        <div class="caption">
+          <h3><%= product.title %></h3>
+          <p><%= product.description %></p>
+          <p><%= link_to("加入购物车", "#", class: "btn btn-danger") %></p>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
