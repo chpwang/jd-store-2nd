@@ -1,0 +1,19 @@
+<tbody>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= product.description %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.price %></td>
+    <td><%= product.created_at %></td>
+    <td>
+    <%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-sm btn-primary")%>
+    <%= link_to("删除商品", admin_product_path(product),    class: "btn btn-sm btn-danger", 
+                  method: :delete, data: { confirm: "Are you sure?" } )%> | 
+    <% if product.is_hide? %>
+      <%= link_to("Publish", "#", class: "btn btn-sm btn-info")%>
+    <% else %>
+      <%= link_to("Hide", "#", class: "btn btn-sm btn-warning")%>
+    <% end %>
+  </td>
+  </tr>
+</tbody>

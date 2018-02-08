@@ -1,1 +1,14 @@
-<h1>管理员后台主页</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+      <tr>
+        <td>商品名称</td>
+        <td>商品描述</td>
+        <td>库存</td>
+        <td>单价（元）</td>
+        <td>创建时间</td>
+        <td>操作</td>
+      </tr>
+    </thead>
+    
+    <%= render partial: "product_item", collection: @products, as: :product %>
+</table>
