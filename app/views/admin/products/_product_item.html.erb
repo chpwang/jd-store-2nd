@@ -1,6 +1,6 @@
 <tbody>
   <tr>
-    <td><%= product.title %></td>
+    <td><%= render_product_status(product) %>   <%= product.title %></td>
     <% if product.image.present? %>
       <td><%= image_tag(product.image.thumb.url) %></td>
     <% else %>
@@ -13,7 +13,7 @@
     <%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-sm btn-primary")%>
     <%= link_to("删除商品", admin_product_path(product),    class: "btn btn-sm btn-danger", 
                   method: :delete, data: { confirm: "Are you sure?" } )%> | 
-    <% if product.is_hide? %>
+    <% if product.is_hidden? %>
       <%= link_to("Publish", "#", class: "btn btn-sm btn-info")%>
     <% else %>
       <%= link_to("Hide", "#", class: "btn btn-sm btn-warning")%>

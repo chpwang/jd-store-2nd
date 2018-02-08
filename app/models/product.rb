@@ -21,7 +21,7 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
 
 
-  def is_hide?
+  def is_hidden?
     is_sold_out
   end
 end
