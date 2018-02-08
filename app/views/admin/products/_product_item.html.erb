@@ -1,7 +1,11 @@
 <tbody>
   <tr>
     <td><%= product.title %></td>
-    <td><%= product.description %></td>
+    <% if product.image.present? %>
+      <td><%= image_tag(product.image.thumb.url) %></td>
+    <% else %>
+      <td>（暂无图片）</td>
+    <% end %>
     <td><%= product.quantity %></td>
     <td><%= product.price %></td>
     <td><%= product.created_at %></td>

@@ -38,6 +38,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'pry'
 gem 'annotate'
+gem 'carrierwave'
+gem 'mini_magick' # working with carrierwave to resize images
 
 
 group :development, :test do
