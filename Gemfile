@@ -37,6 +37,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'pry'
+gem 'annotate'
 
 
 group :development, :test do
